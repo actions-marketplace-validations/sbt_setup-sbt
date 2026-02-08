@@ -4,7 +4,7 @@ inputs:
   sbt-runner-version:
     description: "The runner version (The actual version is controlled via project/build.properties)"
     required: true
-    default: 1.12.0
+    default: 1.12.2
 runs:
   using: "composite"
   steps:
@@ -38,7 +38,7 @@ runs:
     - name: Cache sbt distribution
       id: cache-dir
       if: steps.cache-tool-dir.outputs.cache-hit != 'true'
-      uses: actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
+      uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
       with:
         path: ${{ steps.cache-paths.outputs.sbt_toolpath }}
         key: ${{ steps.cache-paths.outputs.sbt_cachekey }}
